@@ -1,0 +1,53 @@
+{
+  "name": "ssim-compare",
+  "version": "0.0.1",
+  "description": "Compares performance of SSIM.sj between versions 0.0.2 and last",
+  "main": "server.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node src/compare.js",
+    "output": "node src/output.js",
+    "postinstall": "node src/install.js"
+  },
+  "dependencies": {
+    "benchmark": "^2.1.2",
+    "npm-install-version": "^5.1.0"
+  },
+  "targetVersions": [
+    "1.0.0",
+    "2.0.0",
+    "2.2.0"
+  ],
+  "engines": {
+    "node": "6.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obartra/ssim-perf-comparison.git"
+  },
+  "bugs": {
+    "url": "https://github.com/obartra/ssim-perf-comparison/issues"
+  },
+  "keywords": [
+    "ssim.js",
+    "benchmark",
+    "performance"
+  ],
+  "author": "Oscar Bartra",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-standard": "^2.0.1"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "eslint-plugin-jsx-a11y"
+    ]
+  }
+}
