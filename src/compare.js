@@ -2,9 +2,12 @@ const { join } = require('path');
 const niv = require('npm-install-version');
 const Benchmark = require('benchmark');
 const { targetVersions } = require('../package.json');
+const latestSSIM = require('ssim.js');
 
+const ssim = {
+	[latestSSIM.version]: latestSSIM
+};
 const results = {};
-const ssim = {};
 const base = '../assets/';
 const refPath = join(__dirname, base, 'ref.gif');
 const lowPath = join(__dirname, base, 'low.gif');
@@ -16,20 +19,13 @@ targetVersions.forEach((version) => {
 const suite = new Benchmark.Suite('ssim', {
 	async: true,
 	defer: true,
-	onCycle({ target }) {
-		console.log(`  - ${target.name} ✔️`);
-		results[target.name] = {
-			rme: Math.round(target.stats.rme),
-			count: target.count,
-			hz: target.hz.toFixed(2)
-		};
-	},
+	onCycle,
 	onStart,
 	onError,
 	onComplete
 });
 
-targetVersions.forEach((version) => {
+[...targetVersions, latestSSIM.version].forEach((version) => {
 	suite.add(`SSIM @ ${version}`, {
 		defer: true,
 		fn(deferred) {
@@ -68,4 +64,13 @@ function onComplete() {
 		console.log(`  - ${name}: ${hz} ops/sec ±${rme}% ${icon}`);
 	});
 	console.log('');
+}
+
+function onCycle({ target }) {
+	console.log(`  - ${target.name} ✔️`);
+	results[target.name] = {
+		rme: Math.round(target.stats.rme),
+		count: target.count,
+		hz: target.hz.toFixed(2)
+	};
 }
