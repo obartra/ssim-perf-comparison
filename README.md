@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/obartra/ssim-perf-comparison/tree/master.svg?style=shield)](https://circleci.com/gh/obartra/ssim-perf-comparison/tree/master)
+
 # SSIM.js Version Performance Comparison
 
 Node script to compare performance between multiple SSIM.js versions. The list of versions used is set on `package.json:targetVersions` and analyzed using [Benchmark.js](https://benchmarkjs.com/) to determine statistical significance.
