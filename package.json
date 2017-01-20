@@ -12,7 +12,7 @@
   "dependencies": {
     "benchmark": "^2.1.2",
     "npm-install-version": "^5.1.0",
-    "ssim.js": "^2.2.0"
+    "ssim.js": "^2.5.1"
   },
   "targetVersions": [
     "1.0.0",
