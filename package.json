@@ -36,7 +36,7 @@
   "author": "Oscar Bartra",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^3.11.1",
+    "eslint": "^3.14.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-import": "^2.2.0",
