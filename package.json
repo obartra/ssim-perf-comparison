@@ -38,7 +38,7 @@
   "devDependencies": {
     "eslint": "^3.11.1",
     "eslint-config-airbnb": "^13.0.0",
-    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard": "^10.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-promise": "^3.4.0",
